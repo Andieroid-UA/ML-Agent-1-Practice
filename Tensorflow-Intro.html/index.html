@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+</head>
+<body>
+    <script>   
+        async function run() {
+            const myTensor = tf.tensor([[[0, 1, 2], [3, 4, 5]]]);
+            console.log("My rank is " + myTensor.rank);
+
+            console.log(myTensor.shape);
+
+            console.log(myTensor.dtype);
+
+            console.log(myTensor);
+        
+            myTensor.print();
+
+            const stringTensor = tf.tensor(["Hot", "Dog"]);
+
+            stringTensor.print();
+
+            console.log(stringTensor.shape);
+        
+            const twoDimensional = tf.tensor([[1, 2, 3], [4, 5, 6]]);
+    
+            twoDimensional.print();
+        }
+
+        if (document.readyState !== 'loading') {
+            run();
+        } else {
+            document.addEventListener('DOMContentLoaded', run);
+        }
+
+    </script>
+</body>
+</html>
